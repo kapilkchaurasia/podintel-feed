@@ -10,6 +10,10 @@
     <link>https://kapilkchaurasia.github.io/podintel-feed/</link>
     <atom:link href="https://kapilkchaurasia.github.io/podintel-feed/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>PodIntel</itunes:author>
+    <itunes:owner>
+      <itunes:name>PodIntel</itunes:name>
+      <itunes:email>kapilkchaurasia@gmail.com</itunes:email>
+    </itunes:owner>
     <itunes:summary>A daily podcast episode that tells you what's worth listening to across all your podcasts. Your feed, summarized in under 4 minutes.</itunes:summary>
     <itunes:category text="News">
       <itunes:category text="Daily News"/>
