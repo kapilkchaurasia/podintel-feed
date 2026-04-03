@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:podcast="https://podcastindex.org/namespace/1.0"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PodIntel Daily Briefing</title>
+    <description>A daily podcast episode that tells you what's worth listening to across all your podcasts. Your feed, summarized in under 4 minutes.</description>
+    <language>en</language>
+    <link>https://kapilkchaurasia.github.io/podintel-feed/</link>
+    <atom:link href="https://kapilkchaurasia.github.io/podintel-feed/feed.xml" rel="self" type="application/rss+xml"/>
+    <itunes:author>PodIntel</itunes:author>
+    <itunes:summary>A daily podcast episode that tells you what's worth listening to across all your podcasts. Your feed, summarized in under 4 minutes.</itunes:summary>
+    <itunes:category text="News">
+      <itunes:category text="Daily News"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:image href="https://kapilkchaurasia.github.io/podintel-feed/cover.png"/>
+
+    <item>
+      <title>Friday Apr 3 — 5 episodes | Tariff refund mess, investment banking, stolen KitKats</title>
+      <description><![CDATA[
+🔥 GEM: The Journal — How Do You Refund $166 Billion? (18m)
+→ [07:25] "We live in the age of computers" — Judge Eaton to the government
+→ [09:03] Ruling from the bench: start refunding now
+→ [12:05] Costco sued by consumers wanting refund share
+
+✓ NOTABLE: Odd Lots — What Investment Bankers Actually Do All Day (54m)
+→ [05:07] Scott Bok started on Wall Street in 1981 when M&A barely existed
+→ [08:15] "The real job is managing CEO egos during deals"
+
+✓ NOTABLE: Finshots Daily — The Economics of Stolen KitKats (8m)
+→ 12,000 kilos vanished between Italy and Poland
+→ Food is 22% of all cargo theft — none shows up in GDP
+
+⏭ SKIP: Bloomberg Daybreak — Bank earnings preview. Nothing beyond headlines.
+⏭ SKIP: MSSP Ep 606 — The usual chaos.
+      ]]></description>
+      <itunes:summary>The Journal has a fascinating story about a 77-year-old judge handling $166B in tariff refunds. Odd Lots explains what investment bankers actually do. Finshots covers stolen KitKats economics.</itunes:summary>
+      <enclosure url="https://kapilkchaurasia.github.io/podintel-feed/episodes/2026-04-03-friday.mp3" length="2462659" type="audio/mpeg"/>
+      <guid>podintel-2026-04-03</guid>
+      <pubDate>Fri, 03 Apr 2026 06:00:00 +0800</pubDate>
+      <itunes:duration>154</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+
+  </channel>
+</rss>
