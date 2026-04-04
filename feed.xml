@@ -62,8 +62,9 @@ The usual chaos.
 If two, add Odd Lots.
       ]]></description>
       <itunes:summary>The Journal has a fascinating story about a 77-year-old judge handling $166B in tariff refunds. Odd Lots explains what investment bankers actually do. Finshots covers stolen KitKats economics.</itunes:summary>
+      <podcast:chapters url="https://kapilkchaurasia.github.io/podintel-feed/episodes/2026-04-03-friday-chapters.json" type="application/json+chapters"/>
       <enclosure url="https://kapilkchaurasia.github.io/podintel-feed/episodes/2026-04-03-friday.mp3" length="2462659" type="audio/mpeg"/>
-      <guid>podintel-2026-04-03-v2</guid>
+      <guid>podintel-2026-04-03-v3</guid>
       <pubDate>Fri, 03 Apr 2026 06:00:00 +0800</pubDate>
       <itunes:duration>154</itunes:duration>
       <itunes:explicit>false</itunes:explicit>

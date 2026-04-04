@@ -1,0 +1,11 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    { "startTime": 0, "title": "Headlines — 5 episodes today" },
+    { "startTime": 15, "title": "The Journal — $166B Tariff Refund Mess" },
+    { "startTime": 75, "title": "Odd Lots — What Investment Bankers Actually Do" },
+    { "startTime": 105, "title": "Finshots — Stolen KitKats Economics" },
+    { "startTime": 125, "title": "Skips — Bloomberg, MSSP" },
+    { "startTime": 135, "title": "Recommendation" }
+  ]
+}
