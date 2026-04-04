@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PodIntel — Your daily podcast briefing</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0a0a;
+    color: #e8e8e8;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1a1a2e;
+    color: #7c83ff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 span {
+    color: #7c83ff;
+  }
+
+  .hero p {
+    font-size: 18px;
+    color: #999;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* Problem */
+  .problem {
+    padding: 50px 0;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .problem-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #7c83ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .problem p {
+    font-size: 17px;
+    color: #bbb;
+    margin-bottom: 12px;
+  }
+
+  /* How it works */
+  .how-it-works {
+    padding: 50px 0;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: #1a1a2e;
+    color: #7c83ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .step-text h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .step-text p {
+    font-size: 15px;
+    color: #999;
+  }
+
+  /* Phone mockup */
+  .phone-section {
+    padding: 50px 0;
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+  }
+
+  .phone-section .section-title {
+    margin-bottom: 12px;
+  }
+
+  .phone-section .subtitle {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 32px;
+  }
+
+  .phone {
+    background: #000;
+    border-radius: 44px;
+    padding: 10px;
+    max-width: 360px;
+    margin: 0 auto;
+    border: 3px solid #333;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .phone-screen {
+    background: #fff;
+    border-radius: 34px;
+    overflow: hidden;
+  }
+
+  .phone-statusbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    background: #fff;
+  }
+
+  .phone-statusbar-right {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .phone-topbar {
+    display: flex;
+    gap: 8px;
+    padding: 4px 16px 12px;
+    background: #fff;
+  }
+
+  .phone-topbar-pill {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #eee;
+    color: #333;
+  }
+
+  .phone-topbar-pill.active {
+    background: #1DB954;
+    color: #fff;
+  }
+
+  .phone-page-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #000;
+    padding: 4px 16px 2px;
+  }
+
+  .phone-filter-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px 12px;
+    font-size: 12px;
+    color: #666;
+  }
+
+  .sp-ep {
+    padding: 0 16px 16px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .sp-ep-header {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .sp-ep-art {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .sp-ep-art.podintel { background: linear-gradient(135deg, #7c83ff, #5a5fcf); }
+  .sp-ep-art.journal { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+  .sp-ep-art.finshots { background: linear-gradient(135deg, #2ecc71, #1a9c4e); }
+
+  .sp-ep-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .sp-ep-show {
+    font-size: 12px;
+    color: #888;
+  }
+
+  .sp-ep-desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+    margin-top: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .sp-ep-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .sp-ep-date {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .sp-ep-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .sp-action-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #999;
+  }
+
+  .sp-play-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+  }
+
+  .sp-ep.highlighted {
+    background: linear-gradient(135deg, rgba(124,131,255,0.06), rgba(124,131,255,0.02));
+    margin: 0 -16px;
+    padding: 12px 16px 16px;
+    border: 1.5px solid rgba(124,131,255,0.2);
+    border-radius: 12px;
+    margin-bottom: 4px;
+  }
+
+  .sp-ep.highlighted .sp-ep-title {
+    color: #5a5fcf;
+  }
+
+  .sp-ep-highlight-tag {
+    display: inline-block;
+    background: #7c83ff;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .phone-caption {
+    color: #7c83ff;
+    font-size: 14px;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  /* Real screenshot */
+  .real-screenshot {
+    padding: 50px 0;
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+  }
+
+  .real-screenshot .section-title {
+    margin-bottom: 12px;
+  }
+
+  .real-screenshot .subtitle {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 28px;
+  }
+
+  .screenshot-container {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  }
+
+  .screenshot-container img {
+    width: 100%;
+    display: block;
+  }
+
+  .screenshot-label {
+    font-size: 13px;
+    color: #888;
+    margin-top: 12px;
+  }
+
+  /* Sample audio */
+  .sample {
+    padding: 50px 0;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .sample .section-title {
+    text-align: center;
+  }
+
+  .sample .subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 28px;
+  }
+
+  .audio-card {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .audio-card-header {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .audio-card-art {
+    width: 56px;
+    height: 56px;
+    background: #7c83ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .audio-card-meta .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .audio-card-meta .date {
+    font-size: 13px;
+    color: #888;
+  }
+
+  audio {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+
+  .episode-breakdown {
+    border-top: 1px solid #2a2a2a;
+    padding-top: 16px;
+  }
+
+  .episode-breakdown h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .ep-tier {
+    margin-bottom: 14px;
+  }
+
+  .ep-tier .tier-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .tier-gem .tier-label { color: #ff6b6b; }
+  .tier-notable .tier-label { color: #ffd93d; }
+  .tier-skip .tier-label { color: #666; }
+
+  .ep-tier .tier-detail {
+    font-size: 13px;
+    color: #999;
+    padding-left: 22px;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 60px 0 80px;
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+  }
+
+  .cta .section-title {
+    margin-bottom: 12px;
+  }
+
+  .cta p {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 28px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #7c83ff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 36px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .cta-button:hover {
+    background: #6a71e0;
+  }
+
+  .cta-note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 12px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 30px 0;
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 50px 0 40px; }
+    .hero h1 { font-size: 30px; }
+    .hero p { font-size: 16px; }
+    .section-title { font-size: 24px; }
+    .phone { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">EARLY ACCESS</div>
+    <h1>A daily audio briefing of <span>your podcast feed</span></h1>
+    <p>One short episode a day. Everything new in your feed, covered.</p>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <div class="problem-label">Sound familiar?</div>
+    <p>You follow 15+ podcasts. Every day, new episodes drop. You scan titles, check chapters if they exist, eyeball it, pick something.</p>
+    <p>You still miss episodes that turn out to be great because the title didn't grab you or the chapters didn't do it justice. Some days you just don't have time to check and don't even know an episode dropped.</p>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-it-works">
+    <h2 class="section-title">How PodIntel works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <h3>Connect your podcasts</h3>
+          <p>Link the app you use to listen to podcasts. We pull your subscriptions automatically.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <h3>We show up in your feed</h3>
+          <p>PodIntel shows up in your app, right alongside your regular shows. Nothing new to install.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <h3>Hit play whenever you're ready</h3>
+          <p>A new episode drops daily with a rundown of everything in your feed from the last 24 hours. Key moments, skip/listen verdicts, and what to prioritize if you're short on time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phone mockup -->
+  <section class="phone-section">
+    <h2 class="section-title">It lives in your podcast app</h2>
+    <p class="subtitle">No new app. No email. No website to check.</p>
+    <div class="phone">
+      <div class="phone-screen">
+        <div class="phone-statusbar">
+          <span>13:19</span>
+          <span class="phone-statusbar-right">LTE &#9632;&#9632;&#9632; 74%</span>
+        </div>
+        <div class="phone-topbar">
+          <div class="phone-topbar-pill">Music</div>
+          <div class="phone-topbar-pill active">Podcasts</div>
+          <div class="phone-topbar-pill">Following</div>
+        </div>
+        <div class="phone-page-title">Latest episodes</div>
+        <div class="phone-filter-row">&#9776; All &middot; Release date</div>
+
+        <div class="sp-ep highlighted">
+          <div class="sp-ep-highlight-tag">Your daily briefing</div>
+          <div class="sp-ep-header">
+            <div class="sp-ep-art podintel">PI</div>
+            <div>
+              <div class="sp-ep-title">Fri Apr 3 — 5 episodes | Tariffs, banking, stolen KitKats</div>
+              <div class="sp-ep-show">PodIntel Daily Briefing</div>
+            </div>
+          </div>
+          <div class="sp-ep-desc">5 new episodes in your feed today. The Journal has a fascinating story about $166B in tariff refunds. Odd Lots explains what investment bankers actually do...</div>
+          <div class="sp-ep-footer">
+            <div class="sp-ep-date">Today &middot; 2min</div>
+            <div class="sp-ep-actions">
+              <div class="sp-action-icon">+</div>
+              <div class="sp-action-icon">&#8595;</div>
+              <div class="sp-play-btn">&#9654;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sp-ep">
+          <div class="sp-ep-header">
+            <div class="sp-ep-art journal">TJ</div>
+            <div>
+              <div class="sp-ep-title">How Do You Refund $166 Billion?</div>
+              <div class="sp-ep-show">The Journal</div>
+            </div>
+          </div>
+          <div class="sp-ep-desc">After the Supreme Court declared the tariffs illegal, 3,000 companies filed near-identical lawsuits wanting their money back...</div>
+          <div class="sp-ep-footer">
+            <div class="sp-ep-date">Yesterday &middot; 18min</div>
+            <div class="sp-ep-actions">
+              <div class="sp-action-icon">+</div>
+              <div class="sp-action-icon">&#8595;</div>
+              <div class="sp-play-btn">&#9654;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sp-ep">
+          <div class="sp-ep-header">
+            <div class="sp-ep-art finshots">FD</div>
+            <div>
+              <div class="sp-ep-title">The Economics of Stolen KitKats</div>
+              <div class="sp-ep-show">Finshots Daily</div>
+            </div>
+          </div>
+          <div class="sp-ep-desc">12,000 kilos of KitKats vanished between Italy and Poland. Food turns out to be the most stolen cargo globally...</div>
+          <div class="sp-ep-footer">
+            <div class="sp-ep-date">Yesterday &middot; 8min</div>
+            <div class="sp-ep-actions">
+              <div class="sp-action-icon">+</div>
+              <div class="sp-action-icon">&#8595;</div>
+              <div class="sp-play-btn">&#9654;</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="phone-caption">PodIntel sits right alongside your regular podcasts</div>
+  </section>
+
+  <!-- Real screenshot -->
+  <section class="real-screenshot">
+    <h2 class="section-title">Tap on it. Here's what you get.</h2>
+    <p class="subtitle">Episode description with key moments, timestamps, and skip/listen verdicts for every episode in your feed.</p>
+    <div class="screenshot-container">
+      <img src="spotify-desktop.png" alt="PodIntel episode open in Spotify showing episode description with GEM, NOTABLE, and SKIP verdicts">
+    </div>
+    <div class="screenshot-label">Real screenshot from Spotify</div>
+  </section>
+
+  <!-- Sample audio -->
+  <section class="sample">
+    <h2 class="section-title">Listen to a real briefing</h2>
+    <p class="subtitle">This covers 5 actual episodes from a real feed. About 2.5 minutes.</p>
+    <div class="audio-card">
+      <div class="audio-card-header">
+        <div class="audio-card-art">P</div>
+        <div class="audio-card-meta">
+          <div class="title">Friday Apr 3 — 5 episodes</div>
+          <div class="date">Tariff refund mess, investment banking, stolen KitKats</div>
+        </div>
+      </div>
+      <audio controls preload="metadata">
+        <source src="episodes/2026-04-03-friday.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+      <div class="episode-breakdown">
+        <h4>What's covered</h4>
+        <div class="ep-tier tier-gem">
+          <div class="tier-label">GEM: The Journal — How Do You Refund $166 Billion? (18m)</div>
+          <div class="tier-detail">[07:25] "We live in the age of computers" — Judge Eaton to the government</div>
+          <div class="tier-detail">[09:03] Ruling from the bench: start refunding now</div>
+          <div class="tier-detail">[12:05] Costco sued by consumers wanting refund share</div>
+        </div>
+        <div class="ep-tier tier-notable">
+          <div class="tier-label">NOTABLE: Odd Lots — What Investment Bankers Actually Do All Day (54m)</div>
+          <div class="tier-detail">[05:07] Scott Bok started on Wall Street in 1981 when M&A barely existed</div>
+          <div class="tier-detail">[08:15] "The real job is managing CEO egos during deals"</div>
+        </div>
+        <div class="ep-tier tier-notable">
+          <div class="tier-label">NOTABLE: Finshots Daily — The Economics of Stolen KitKats (8m)</div>
+          <div class="tier-detail">12,000 kilos vanished between Italy and Poland</div>
+          <div class="tier-detail">Food is 22% of all cargo theft — none shows up in GDP</div>
+        </div>
+        <div class="ep-tier tier-skip">
+          <div class="tier-label">SKIP: Bloomberg Daybreak — Bank earnings preview. Nothing beyond headlines.</div>
+        </div>
+        <div class="ep-tier tier-skip">
+          <div class="tier-label">SKIP: MSSP Ep 606 — The usual chaos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2 class="section-title">Want this for your feed?</h2>
+    <p>We're opening up to early users. Join the waitlist and be the first to try it.</p>
+    <a class="cta-button" href="https://forms.gle/REPLACE_WITH_YOUR_FORM_ID" target="_blank">Join the waitlist</a>
+    <div class="cta-note">Free during early access. No spam, ever.</div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">PodIntel</div>
+</footer>
+
+</body>
+</html>
